@@ -34,28 +34,28 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <!-- Row 1 -->
-        <Button android:text="7" style="@style/CalcButton" android:onClick="onNumberClick"/>
-        <Button android:text="8" style="@style/CalcButton" android:onClick="onNumberClick"/>
-        <Button android:text="9" style="@style/CalcButton" android:onClick="onNumberClick"/>
-        <Button android:text="⌫" style="@style/CalcButton" android:onClick="onDeleteClick"/>
+        <Button android:text="7"  android:onClick="onNumberClick"/>
+        <Button android:text="8"  android:onClick="onNumberClick"/>
+        <Button android:text="9"  android:onClick="onNumberClick"/>
+        <Button android:text="⌫"  android:onClick="onDeleteClick"/>
 
         <!-- Row 2 -->
-        <Button android:text="4" style="@style/CalcButton" android:onClick="onNumberClick"/>
-        <Button android:text="5" style="@style/CalcButton" android:onClick="onNumberClick"/>
-        <Button android:text="6" style="@style/CalcButton" android:onClick="onNumberClick"/>
-        <Button android:text="" style="@style/CalcButton" android:enabled="false"/>
+        <Button android:text="4"  android:onClick="onNumberClick"/>
+        <Button android:text="5"  android:onClick="onNumberClick"/>
+        <Button android:text="6"  android:onClick="onNumberClick"/>
+        <Button android:text=""  android:enabled="false"/>
 
         <!-- Row 3 -->
-        <Button android:text="1" style="@style/CalcButton" android:onClick="onNumberClick"/>
-        <Button android:text="2" style="@style/CalcButton" android:onClick="onNumberClick"/>
-        <Button android:text="3" style="@style/CalcButton" android:onClick="onNumberClick"/>
-        <Button android:text="" style="@style/CalcButton" android:enabled="false"/>
+        <Button android:text="1"  android:onClick="onNumberClick"/>
+        <Button android:text="2"  android:onClick="onNumberClick"/>
+        <Button android:text="3"  android:onClick="onNumberClick"/>
+        <Button android:text=""  android:enabled="false"/>
 
         <!-- Row 4 -->
-        <Button android:text="" style="@style/CalcButton" android:enabled="false"/>
-        <Button android:text="0" style="@style/CalcButton" android:onClick="onNumberClick"/>
-        <Button android:text="=" style="@style/CalcButton" android:onClick="onOkClick"/>
-        <Button android:text="" style="@style/CalcButton" android:enabled="false"/>
+        <Button android:text=""  android:enabled="false"/>
+        <Button android:text="0"  android:onClick="onNumberClick"/>
+        <Button android:text="="  android:onClick="onOkClick"/>
+        <Button android:text=""  android:enabled="false"/>
 
     </GridLayout>
 
