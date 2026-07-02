@@ -1,60 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pin_bg">
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="?android:colorBackground">
 
-    <!-- PIN display -->
+    <!-- PIN dots -->
     <TextView
         android:id="@+id/txtPin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="• • • •"
-        android:textSize="30sp"
-        android:textColor="#FFFFFF"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/keypad"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text=" "
+        android:textSize="28sp"
+        android:letterSpacing="0.3"
         android:layout_marginBottom="40dp"/>
 
-    <!-- Keypad -->
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/keypad"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:columnCount="3"
-        android:padding="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.65"
-        app:layout_constraintWidth_percent="0.9">
+    <!-- KEYPAD -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <!-- Row 1 -->
-        <Button style="@style/PinKeyButton" android:text="1" android:onClick="onNumberClick"/>
-        <Button style="@style/PinKeyButton" android:text="2" android:onClick="onNumberClick"/>
-        <Button style="@style/PinKeyButton" android:text="3" android:onClick="onNumberClick"/>
+        <!-- 1 2 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <!-- Row 2 -->
-        <Button style="@style/PinKeyButton" android:text="4" android:onClick="onNumberClick"/>
-        <Button style="@style/PinKeyButton" android:text="5" android:onClick="onNumberClick"/>
-        <Button style="@style/PinKeyButton" android:text="6" android:onClick="onNumberClick"/>
+            <Button
+                android:text="1"
+                style="@style/PinButton"
+                android:onClick="onNumberClick"/>
 
-        <!-- Row 3 -->
-        <Button style="@style/PinKeyButton" android:text="7" android:onClick="onNumberClick"/>
-        <Button style="@style/PinKeyButton" android:text="8" android:onClick="onNumberClick"/>
-        <Button style="@style/PinKeyButton" android:text="9" android:onClick="onNumberClick"/>
+            <Button
+                android:text="2"
+                style="@style/PinButton"
+                android:onClick="onNumberClick"/>
 
-        <!-- Row 4 -->
-        <Button style="@style/PinKeyButton" android:text="⌫" android:onClick="onDeleteClick"/>
-        <Button style="@style/PinKeyButton" android:text="0" android:onClick="onNumberClick"/>
-        <Button style="@style/PinKeyButton" android:text="✓" android:onClick="onOkClick"/>
+            <Button
+                android:text="3"
+                style="@style/PinButton"
+                android:onClick="onNumberClick"/>
+        </LinearLayout>
 
-    </androidx.gridlayout.widget.GridLayout>
+        <!-- 4 5 6 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:text="4"
+                style="@style/PinButton"
+                android:onClick="onNumberClick"/>
+
+            <Button
+                android:text="5"
+                style="@style/PinButton"
+                android:onClick="onNumberClick"/>
+
+            <Button
+                android:text="6"
+                style="@style/PinButton"
+                android:onClick="onNumberClick"/>
+        </LinearLayout>
+
+        <!-- 7 8 9 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="7"
+                style="@style/PinButton"
+                android:onClick="onNumberClick"/>
+
+            <Button
+                android:text="8"
+                style="@style/PinButton"
+                android:onClick="onNumberClick"/>
+
+            <Button
+                android:text="9"
+                style="@style/PinButton"
+                android:onClick="onNumberClick"/>
+        </LinearLayout>
+
+        <!-- delete 0 ok -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="⌫"
+                style="@style/PinActionButton"
+                android:onClick="onDeleteClick"/>
+
+            <Button
+                android:text="0"
+                style="@style/PinButton"
+                android:onClick="onNumberClick"/>
+
+            <Button
+                android:text="✓"
+                style="@style/PinActionButton"
+                android:onClick="onOkClick"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
