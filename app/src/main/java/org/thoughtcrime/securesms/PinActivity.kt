@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.thoughtcrime.securesms.home.HomeActivity
-import org.thoughtcrime.securesms.R
+import network.loki.messenger.R
 
 class PinActivity : AppCompatActivity() {
 
