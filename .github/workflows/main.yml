@@ -1,8 +1,9 @@
 name: Build and test
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ "dev", "master" ]
+    branches: [ "dev", "master" , "main"]
   pull_request:
     types: [opened, synchronize, reopened]
 
