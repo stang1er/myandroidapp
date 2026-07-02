@@ -24,43 +24,28 @@ class PinActivity : AppCompatActivity() {
         updateUI()
     }
 
-    // دکمه‌های عددی
     fun onNumberClick(view: View) {
         val value = (view as Button).text.toString()
-
-        // 🔥 FIX: محدودیت درست بر اساس طول PIN واقعی
-        if (input.length < correctPin.length) {
-            input += value
-        }
-
+        if (input.length < correctPin.length) input += value
         updateUI()
-
-        // بررسی خودکار بعد از کامل شدن ورودی
         checkPin()
     }
 
-    // دکمه حذف
     fun onDeleteClick(view: View) {
-        if (input.isNotEmpty()) {
-            input = input.dropLast(1)
-        }
+        if (input.isNotEmpty()) input = input.dropLast(1)
         updateUI()
     }
 
-    // دکمه OK (=)
     fun onOkClick(view: View) {
         checkPin()
     }
 
-    // نمایش نقطه‌ای مثل رمز
     private fun updateUI() {
         txtPin.text = "• ".repeat(input.length)
     }
 
-    // بررسی PIN
     private fun checkPin() {
         if (input.length == correctPin.length) {
-
             if (input == correctPin) {
                 openApp()
             } else {
@@ -71,20 +56,13 @@ class PinActivity : AppCompatActivity() {
         }
     }
 
-    // ورود به HomeActivity (لانچر اصلی)
     private fun openApp() {
         val intent = Intent(this, HomeActivity::class.java)
-
-        // 🔥 FIX مهم: پاک کردن stack برای جلوگیری از برگشت به PIN
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-
         startActivity(intent)
         finish()
     }
 
-    // جلوگیری از برگشت با back
     @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        // هیچ کاری انجام نشود
-    }
+    override fun onBackPressed() {}
 }
