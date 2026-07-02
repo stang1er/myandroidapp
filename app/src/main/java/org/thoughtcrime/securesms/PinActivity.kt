@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.thoughtcrime.securesms.home.HomeActivity
-import network.loki.messenger.R
+import org.thoughtcrime.securesms.R
 
 class PinActivity : AppCompatActivity() {
 
@@ -42,7 +42,7 @@ class PinActivity : AppCompatActivity() {
     }
 
     private fun updateUI() {
-        txtPin.text = "• ".repeat(input.length)
+        txtPin.text = "• ".repeat(input.length).trim()
     }
 
     private fun checkPin() {
@@ -64,6 +64,5 @@ class PinActivity : AppCompatActivity() {
         finish()
     }
 
-    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {}
 }
