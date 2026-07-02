@@ -260,5 +260,33 @@
     <style name="PopupMenu.MessageRequests" parent="@style/Widget.AppCompat.PopupMenu">
         <item name="android:background">?backgroundSecondary</item>
     </style>
+<!-- PIN Keyboard (Samsung OneUI-like) -->
 
+<style name="PinButton">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">72dp</item>
+    <item name="android:layout_weight">1</item>
+
+    <item name="android:background">@drawable/pin_button_bg</item>
+    <item name="android:textColor">?android:textColorPrimary</item>
+    <item name="android:textSize">22sp</item>
+    <item name="android:textStyle">bold</item>
+
+    <item name="android:stateListAnimator">@null</item>
+    <item name="android:gravity">center</item>
+</style>
+
+<style name="PinActionButton">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">72dp</item>
+    <item name="android:layout_weight">1</item>
+
+    <item name="android:background">@drawable/pin_button_bg_secondary</item>
+    <item name="android:textColor">?android:textColorPrimary</item>
+    <item name="android:textSize">18sp</item>
+    <item name="android:textStyle">bold</item>
+
+    <item name="android:stateListAnimator">@null</item>
+    <item name="android:gravity">center</item>
+</style>
 </resources>
