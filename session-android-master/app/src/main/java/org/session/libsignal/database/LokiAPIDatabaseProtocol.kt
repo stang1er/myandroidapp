@@ -1,0 +1,31 @@
+package org.session.libsignal.database
+
+import org.session.libsignal.crypto.ecc.ECKeyPair
+import org.session.libsignal.utilities.ForkInfo
+import org.session.libsignal.utilities.Snode
+import java.util.Date
+
+interface LokiAPIDatabaseProtocol {
+
+    fun getLastMessageHashValue(snode: Snode, publicKey: String, namespace: Int): String?
+    fun setLastMessageHashValue(snode: Snode, publicKey: String, newValue: String, namespace: Int)
+    fun clearLastMessageHashes(publicKey: String)
+    fun clearLastMessageHashesByNamespaces(vararg namespaces: Int)
+    fun clearAllLastMessageHashes()
+    fun getAuthToken(server: String): String?
+    fun setAuthToken(server: String, newValue: String?)
+    fun getLastMessageServerID(room: String, server: String): Long?
+    fun setLastMessageServerID(room: String, server: String, newValue: Long)
+    fun getLastDeletionServerID(room: String, server: String): Long?
+    fun setLastDeletionServerID(room: String, server: String, newValue: Long)
+    fun getOpenGroupPublicKey(server: String): String?
+    fun setOpenGroupPublicKey(server: String, newValue: String)
+    fun getClosedGroupEncryptionKeyPairs(groupPublicKey: String): List<ECKeyPair>
+    fun getLatestClosedGroupEncryptionKeyPair(groupPublicKey: String): ECKeyPair?
+    fun getForkInfo(): ForkInfo
+    fun setForkInfo(forkInfo: ForkInfo)
+    fun migrateLegacyOpenGroup(legacyServerId: String, newServerId: String)
+    fun getLastLegacySenderAddress(threadRecipientAddress: String): String?
+    fun setLastLegacySenderAddress(threadRecipientAddress: String, senderRecipientAddress: String?)
+
+}
