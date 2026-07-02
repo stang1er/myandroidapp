@@ -88,7 +88,12 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
-          java-version: '21'
+        
+           java-version: '21'
+
+      - name: make gradlew executable
+        run: chmod +x gradlew
+           
 
       - name: Build with gradle
         id: build
