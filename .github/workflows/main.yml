@@ -91,6 +91,9 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: make gradlew executable
+        run: chmod +x gradlew
+        
       - name: Build with gradle
         id: build
         run: ./gradlew testPlayDebugUnitTest --stacktrace
